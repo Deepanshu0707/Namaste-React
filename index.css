@@ -29,6 +29,11 @@
     flex-wrap: wrap;
 }
 
+.filter{
+    margin: 10px 5px 5px 5px;
+   
+}
+
 .card{
     height: 410px;
     width: 250px;
