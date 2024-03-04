@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ResturantCard from "./ResturantCard";
 import Shimmer from "./Shimmer.js";
 
@@ -5,7 +6,7 @@ import { useState, useEffect } from "react";
 const Body = () => {
   // const [toggleBtn, setToggleBtn] = useState(false);
   const [resList, setResList] = useState([]);
-  const [copyResList,setCopyResList] = useState([]);
+  const [copyResList,setCopyResList] = useState([]);//For putting Changes we use copyResList instead of orginal resList// 
   const [resSearch, setResSearch] = useState("");
 
   const fetchData = async () => {
@@ -68,7 +69,7 @@ const Body = () => {
           <Shimmer />
         ) : (
           copyResList.map((item, index) => {
-            return <ResturantCard key={item.info.id} resData={item} />;
+            return <Link key={item.info.id} to={`/restaurant/${item.info.id}`} className="link"> <ResturantCard  resData={item} /> </Link>;
           })
         )}
       </div>
