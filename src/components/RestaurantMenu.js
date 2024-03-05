@@ -45,7 +45,7 @@ export default function RestaurantMenu() {
                return <li className="menu-item-li" key={item.card.info.id}>
                 <div>
                 <h2>{item.card.info.name}</h2>  
-                <p>&#8377;{item.card.info.price / 100}</p> 
+                <p>&#8377;{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</p> 
                 </div>
                 
                 <div className="list-item-image">

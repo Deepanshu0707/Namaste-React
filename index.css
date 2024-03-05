@@ -103,3 +103,10 @@
     width: 120px;
     border-radius: 10px;
 }
+
+.about{
+    margin-top: 10px;
+    height: 150px;
+    width: 1200px;
+    border: 1px solid black;
+}
