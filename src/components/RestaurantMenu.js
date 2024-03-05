@@ -1,25 +1,14 @@
-import { useEffect, useState } from "react";
-import { CARD_URL, MENU_URL } from "../utils/constants";
+// import { useEffect, useState } from "react";
+import { CARD_URL} from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";   //Hook that store the info related to path in it...//
 export default function RestaurantMenu() {
-    const [menuDetails,setMenuDetails] = useState(null);
+   
     const {id} = useParams();  //Deconstruct Parameter from useParams Object//
- 
-    const fetchMenu = async()=>{
-      
-        const menu = await fetch(MENU_URL+id);
-        const json = await menu.json();
-        // console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards[0]);
-        // const { itemCards } = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-        setMenuDetails(json);
-        console.log(json);
-    }
 
-    useEffect(()=>{
-        fetchMenu();
-    },[])
-
+    const menuDetails = useRestaurantMenu(id);
+   
     if(menuDetails === null){
         return <Shimmer/>
     }
