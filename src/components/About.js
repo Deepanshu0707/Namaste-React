@@ -4,9 +4,10 @@ import UserClass from "./UserClass";
 export default class ABout extends Component {
   constructor(props){
     super(props);
+   
     console.log("Parent Constructor");
   }
-   componentDidMount(){
+   async componentDidMount(){
     console.log("Parent Component Did Mount");
    }
 
@@ -14,8 +15,7 @@ export default class ABout extends Component {
     console.log("Parent Render");
   return (
     <div>
-      <UserClass name={"First"} /> 
-      <UserClass name={"Second"} /> 
+      <UserClass /> 
     </div>
   )
 }

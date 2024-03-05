@@ -5,30 +5,42 @@ export default class UserClass extends Component {
         super(props);
     
         this.state = {
-            count : 1,
-            count2: 2,
+            userInfo: {
+                name: "XYZ",
+                
+              }
         }
-        console.log(this.props.name + "Child Constructor");
+        console.log("Child Constructor");
     }
      
-    componentDidMount(){
-        console.log(this.props.name + "Child Component Did Mount");
+   async componentDidMount(){
+        const data = await fetch("https://api.github.com/users/Deepanshu0707");
+        const json = await data.json();
+        this.setState({
+        userInfo : json,
+        });
+
+        console.log("Child Component Did Mount");
+    }
+
+    componentDidUpdate(){
+        console.log("Child Component Is Updated.");
+    }
+
+    componentWillUnmount(){
+        console.log("You Changed the page so component is Unmount");
     }
 
   render() {
-  const { name} = this.props;
-  const {count, count2} = this.state;
-  console.log(this.props.name + "Child Render");
+  
+  console.log("Child Render");
     return (
       <div className='about'>
-        <h1>{count} --- --- {count2}</h1>
-        <button onClick={()=>{
-            this.setState({
-                count : this.state.count + 1,
-                count2: this.state.count2 + 1,
-            })
-        }}>Increase Count</button>
-        <h2>{name}</h2>
+        <img src={this.state.userInfo.avatar_url} alt="Avatar-Image" className='about_image'/>
+        <h2>Name: {this.state.userInfo.name}</h2>
+        <h3>ID: {this.state.userInfo.id}</h3>
+        <h4>Github: {this.state.userInfo.login}</h4>
+
       </div>
     )
   }

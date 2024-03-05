@@ -106,7 +106,12 @@
 
 .about{
     margin-top: 10px;
-    height: 150px;
-    width: 1200px;
+    height: 436px;
+    width: 300px;
     border: 1px solid black;
+}
+
+.about_image{
+    height: 300px;
+    width: 300px;
 }
