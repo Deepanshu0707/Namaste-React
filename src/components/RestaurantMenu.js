@@ -21,7 +21,7 @@ export default function RestaurantMenu() {
   return (
     <div className="menu">
         <div className="menu-head">
-        <h1>{name}</h1>
+        <h1>{name}</h1> 
         <p className="menu-head-detail">{cuisines.join(", ")}</p>
         <p className="menu-head-detail">{avgRating} Rating</p>
         <p className="menu-head-detail">{costForTwoMessage}</p>

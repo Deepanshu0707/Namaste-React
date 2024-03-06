@@ -37,10 +37,10 @@ export default class UserClass extends Component {
     return (
       <div className='about'>
         <img src={this.state.userInfo.avatar_url} alt="Avatar-Image" className='about_image'/>
-        <h2>Name: {this.state.userInfo.name}</h2>
+        <h2>Name: {this.state.userInfo.name} 💔</h2>
         <h3>ID: {this.state.userInfo.id}</h3>
         <h4>Github: {this.state.userInfo.login}</h4>
-
+        
       </div>
     )
   }

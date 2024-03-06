@@ -8,7 +8,6 @@ const [menuDetails,setMenuDetails] = useState(null);
   useEffect(()=>{
     fetchData();
   },[])
-
     const fetchData = async ()=>{
         const data = await fetch(MENU_URL + id);
         const json = await data.json();
