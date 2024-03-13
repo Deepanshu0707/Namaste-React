@@ -1,4 +1,9 @@
-.header{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,4 +119,4 @@
 .about_image{
     height: 300px;
     width: 300px;
-}
+} */

@@ -10,7 +10,7 @@ export default class UserClass extends Component {
                 
               }
         }
-        console.log("Child Constructor");
+        // console.log("Child Constructor");
     }
      
    async componentDidMount(){
@@ -20,22 +20,22 @@ export default class UserClass extends Component {
         userInfo : json,
         });
 
-        console.log("Child Component Did Mount");
+        // console.log("Child Component Did Mount");
     }
 
     componentDidUpdate(){
-        console.log("Child Component Is Updated.");
+        // console.log("Child Component Is Updated.");
     }
 
     componentWillUnmount(){
-        console.log("You Changed the page so component is Unmount");
+        // console.log("You Changed the page so component is Unmount");
     }
 
   render() {
   
-  console.log("Child Render");
+  // console.log("Child Render");
     return (
-      <div className='about'>
+      <div className='about h-[480px] w-[400px] mt-16 border border-solid border-black ml-[660px]'>
         <img src={this.state.userInfo.avatar_url} alt="Avatar-Image" className='about_image'/>
         <h2>Name: {this.state.userInfo.name} 💔</h2>
         <h3>ID: {this.state.userInfo.id}</h3>
