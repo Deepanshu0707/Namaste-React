@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { CARD_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
+
 
 
 export default function MenuCategory({category, categoryItems, setCategoryItemsIndex}) {
-  
+  const dispatch = useDispatch();
+  const handleCartItems = (item)=>{
+    dispatch(addItem(item));
+  }
+
   const btnOnClick = () => {
    setCategoryItemsIndex();
   };
@@ -46,8 +53,8 @@ export default function MenuCategory({category, categoryItems, setCategoryItemsI
                   src={CARD_URL + item.card.info.imageId}
                   alt="MenuItems-Img"
                 />
-                <button className="text-lime-200 bg-black absolute mt-[-32px] ml-10 p-1 w-[60px] rounded-md font-mono">
-                  ADD
+                <button className="text-lime-200 bg-black absolute mt-[-32px] ml-10 p-1 w-[60px] rounded-md font-mono" onClick={()=>handleCartItems(item)}>
+                  ADD +
                 </button>
               </div>
             </div>
