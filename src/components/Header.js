@@ -15,7 +15,7 @@ const Header = ()=>{
     const status = useStatus(); 
     const {loginUser} = useContext(UserContext);
     const cartValue = useSelector((state)=>state.cart.items);    
-    console.log(cartValue);
+    // console.log(cartValue);
     return(
         <div className="header flex justify-between ml-[15px] mt-[-5px] pr-4 bg-green-100 ">
             <div className="logo_container">
